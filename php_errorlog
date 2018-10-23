@@ -1,0 +1,8 @@
+[25-May-2018 17:01:11 CST6CDT] PHP Fatal error:  Call to undefined function get_header() in /home/kyantec/public_html/wp-content/themes/makespace-child/index.php on line 1
+[25-May-2018 17:01:13 CST6CDT] PHP Fatal error:  Call to undefined function get_header() in /home/kyantec/public_html/wp-content/themes/makespace-child/index.php on line 1
+[03-Jul-2018 02:16:56 CST6CDT] PHP Fatal error:  Call to undefined function get_header() in /home/kyantec/public_html/wp-content/themes/makespace-child/index.php on line 1
+[03-Jul-2018 02:16:56 CST6CDT] PHP Fatal error:  Call to undefined function wp_head() in /home/kyantec/public_html/wp-content/themes/makespace-child/header.php on line 7
+[10-Jul-2018 15:25:34 CST6CDT] PHP Fatal error:  Call to undefined function wp_head() in /home/kyantec/public_html/wp-content/themes/makespace-child/header.php on line 7
+[10-Jul-2018 15:25:34 CST6CDT] PHP Fatal error:  Call to undefined function get_header() in /home/kyantec/public_html/wp-content/themes/makespace-child/index.php on line 1
+[24-Jul-2018 14:15:03 CST6CDT] PHP Fatal error:  Call to undefined function wp_head() in /home/kyantec/public_html/wp-content/themes/makespace-child/header.php on line 7
+[24-Jul-2018 14:15:03 CST6CDT] PHP Fatal error:  Call to undefined function get_header() in /home/kyantec/public_html/wp-content/themes/makespace-child/index.php on line 1

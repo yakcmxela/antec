@@ -1,0 +1,15 @@
+.page-template-default {
+	.container {
+		margin: 32px auto 32px auto;
+		article {
+			figure {
+				border: 0px;
+				figcaption {
+					background-color: rgba(0,55,70,0.44);
+					color: white;
+					font-size: 1em;
+				}
+			}
+		}
+	}
+}

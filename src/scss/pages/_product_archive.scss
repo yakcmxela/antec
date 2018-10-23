@@ -1,0 +1,417 @@
+.archive {
+	transition: all .5s linear;
+	.container {
+		margin: 32px auto 32px auto;
+		position: relative;
+		transition: all .5s linear;
+		.page-title {
+			margin-bottom: 0px;
+			max-width: 350px;
+			white-space: nowrap;
+			text-transform: uppercase;
+		}
+		.intro {
+			display: flex;
+			.text {
+				max-width: 50%;
+			}
+			img {
+				margin-left: auto;
+			}
+		}
+		.product-filter {
+			text-transform: uppercase;
+			font-family: $font-family-headline;
+			width: 100%;
+			position: relative;
+			transition: all .3s linear;
+			transform: perspective(2000px);
+			z-index: 100;
+			.heading {
+				padding: 18px;
+				background-color: white;
+				z-index: 100;
+				border: solid 1px rgba(95, 92, 90, 0.32);
+				border-radius: 8px;
+				display: flex;
+				align-items: center;
+				transition: all 0s linear;
+				h4 {
+					margin-bottom: 0px;
+				}
+				.fa {
+					margin-left: auto;
+					font-size: 24px;
+				}
+			}
+			.fa {
+				color: $link-color;
+				transition: all .15s linear;
+			}
+			.catalog {
+				padding: 0px 18px 18px 18px;
+				opacity: 0;
+				visibility: hidden;
+				transform: translate(0px, 0px) rotateX(50deg) perspective(2000px);
+				transform-origin: top;
+				transition: all .15s linear;
+				box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.23);
+				border: solid 1px rgba(95, 92, 90, 0.32);
+				border-top: 0px;
+				border-radius: 0px 0px 8px 8px;
+				width: 100%;
+				position: absolute;
+				background-color: white;
+				.product-categories {
+					display: inline-flex;
+					width: 100%;
+					margin-bottom: 0px;
+					ul {
+						width: 100%;
+						margin-left: 18px;
+						&:last-of-type {
+							margin-right: 0px;
+						}
+						li {
+							padding: 6px 12px 6px 24px;
+							letter-spacing: 2px;
+							font-size: 18px;
+							color: $link-color;
+							background-color: #f9f9f9;
+							position: relative;
+							cursor: pointer;
+							&.selected {
+								color: $headline-color;
+								&:before {
+									content: '\2713\0020';
+									position: absolute;
+									left: 6px;
+									color: $link-color;
+								}
+							}
+							&:nth-child(2n) {
+								background-color: initial;
+							}
+							&:first-of-type {
+								font-weight: $font-weight-headline;
+								padding: 12px;
+								background-color: #f1f0f0;
+								border-radius: 8px 8px 0px 0px;
+								line-height: 2;
+								color: #726f6d;
+								cursor: default;
+								&:before {
+									content: '';
+								}
+							}
+
+						}
+					}
+					.orderby {
+						display: inline-flex;
+						align-self: flex-start;
+						width: 10%;
+						height: auto;
+						position: relative;
+						flex-shrink: 0;
+						select, option {
+							width: 100%;
+							height: 100%;
+							background-color: #f1f0f0;
+							border: none;
+							font-weight: $font-weight-headline;
+							color: #726f6d;
+							padding: 12px;
+							font-size: 18px;
+							line-height: 2;
+							letter-spacing: 2px;
+							border-radius: 8px;
+						}
+						.fa {
+							position: absolute;
+							right: 12px;
+							top: 50%;
+							transform: translateY(-50%);
+							font-size: 18px;
+							pointer-events: none;
+						}
+					}
+				}
+				.button-container {
+					width: 100%;
+					text-align: center;
+					margin: 12px auto 0px auto;
+					max-width: 300px;
+					position: relative;
+					.loader {
+						position: absolute;
+						top: 8px;
+						left: 32px;
+						transform: translateX(-50%);
+						width: 100px;
+						height: 100px;
+						opacity: 0;
+						visibility: hidden;
+						transition: all .15s linear;
+						@keyframes hexload {
+							0% {
+								opacity: 1;
+							}
+							50% {
+								opacity: 0;
+								color: #92fe9d;
+							}
+							100% {
+								opacity: 1;
+							}
+						}
+						.hex {
+							position: absolute;
+							left: 50%;
+							transform: translateX(-50%);
+							color: $link-color;
+							animation: hexload 1.5s linear infinite;
+							&:nth-child(1){ 
+								left: 39px;
+								animation-delay: .25s;
+							}
+							&:nth-child(2){ 
+								left: 61px;
+								animation-delay: .5s;
+							}
+							&:nth-child(3){ 
+								left: 44.5px;
+								top: -10px;
+								animation-delay: .75s;
+							}
+							&:nth-child(4){ 
+								left: 44.5px;
+								top: 10px;
+								animation-delay: 1s;
+							}
+							&:nth-child(5){ 
+								left: 55.5px;
+								top: -10px;
+								animation-delay: 1.25s;
+							}
+							&:nth-child(6){ 
+								left: 55.5px;
+								top: 10px;
+								animation-delay: 1.5s;
+							}
+							&:nth-child(7){ 
+								animation-delay: 1.75s;
+							}
+						}
+						&.animated {
+							opacity: 1;
+							visibility: visible;
+						}
+					}
+					.clear-results {
+						font-size: 16px;
+						text-transform: initial;
+						margin-bottom: 0px;
+						display: none;
+						cursor: pointer;
+						i {
+							margin-left: 4px;
+						}
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+			&.open {
+				.heading {
+					box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.23);
+					transition: all .3s linear;
+					.fa {
+						transform: scaleY(-1);
+					}
+				}
+				.catalog {
+					visibility: visible;
+					opacity: 1;
+					transform: translate(0px, -6px) rotateX(0deg);
+				}
+			}
+			
+		}
+		#dummy {
+			opacity: 0;
+			visibility: hidden;
+			z-index: -1;
+			position: absolute;
+			height: initial !important;
+			max-height: initial !important;
+		}
+		.products {
+			margin: 0px;
+			transition: all .3s linear;
+			max-height: 100%;
+			height: auto;
+			&.loading {
+				.product, .ajax-pagination {
+					transform: translateY(25%); 
+					opacity: 0;
+					visibility: hidden;
+				}
+			}
+			.product {
+				margin: 24px 0px;
+				border-radius: 8px;
+				overflow: hidden;
+				background-color: #f6fcff;
+				max-height: 1000px;
+				transition: all .3s linear;
+				h2 {
+					background-color: #e3f8ff;
+					padding: 18px;
+					margin: 0px;
+					font-size: 23px;
+					text-transform: initial;
+					transition: all .3s linear;
+				}
+				.details {
+					a {
+						width: 100%;
+						height: 100%;
+						display: flex;
+						padding: 18px;
+						.short-description {
+							margin: 0px;
+							font-size: 23px;
+							color: $headline-color;
+							text-transform: initial;
+							max-width: 65%;
+						}
+						.button-ghost {
+							margin-top: auto;
+							margin-left: auto;
+							.fa {
+								margin-right: 8px;
+								margin-left: -8px;
+							}
+						}
+						li {
+							line-height: 1;
+						}
+					}
+				}
+				&:hover {
+					background-color: #f9f9f9;
+					h2 {
+						background-color: #e3fae5;
+					}
+					.button-ghost {
+						background: $link-color;
+						color: white;
+					}
+				}
+			}
+		}
+		.ajax-pagination {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0px;
+			transition: all .3s linear;
+			.page, .page-nav {
+				color: $link-color;
+				padding: 6px;
+				cursor: pointer;
+				font-size: 23px;
+				font-family: $font-family-headline;
+			}
+			.page-nav {
+				margin: 0px 6px;
+			}
+			.current {
+				pointer-events: none;
+				color: $body-color;
+				font-size: 25px;
+			}
+		}
+		.woocommerce-pagination {
+			display: none;
+			transition: all .3s linear;
+			.page-numbers {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				li {
+					margin: 6px;
+					font-size: 23px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: $tablet) {
+	.archive {
+		.container {
+			.product-filter {
+				.catalog {
+					.product-categories {
+						flex-wrap: wrap;
+						box-shadow: inset 0px 0px 10px rgba(0,0,0,.1);
+						max-height: 400px;
+						overflow-y: scroll;
+						border-radius: 8px;
+						ul, 
+						.orderby {
+							width: 100%;
+							margin: 2px 0px;	
+							margin-left: 0px;
+						}
+						.orderby {
+							margin-top: 0px;
+						}
+					}
+				}
+			}
+			.intro {
+				img {
+					max-width: 35%;
+					padding: 1em 0 0 1em;
+					align-self: flex-start;
+				}
+				.text {
+					max-width: initial;
+				}
+			}
+			.products {
+				.product {
+					.details {
+						a {
+							flex-wrap: wrap;
+							.short-description {
+								max-width: 350px;
+								margin-bottom: 1em;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: $mobile) {
+	.archive {
+		.container {
+			.intro {
+				flex-wrap: wrap;
+				margin-bottom: 32px;
+				img, .text {
+					max-width: initial;
+					padding: initial;
+					margin: 1em auto;
+				}
+			}
+		}
+	}
+}

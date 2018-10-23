@@ -1,0 +1,127 @@
+.site-footer {
+	background-color: $headline-color;
+	min-height: 150px;
+	display: flex;
+	padding: 32px;
+	margin-top: auto;
+	.container {
+		margin: auto 0px 0px 0px !important;
+		max-width: initial !important;
+		min-height: initial !important;
+		min-width: 100%;
+		width: 100%;
+		display: flex;
+		.left {
+			width: 100%;
+			.footer-inlinks {
+				ul {
+					display: flex;
+					margin-top: auto;
+					align-items: flex-end;
+					flex-wrap: wrap;
+					li {
+						a {
+							font-family: $font-family-base;
+							letter-spacing: 1px;
+						}
+						&.logo {
+							padding: 0px 24px 0px 0px;
+							transform: translateY(12px);
+						}
+						&.copyright {
+							color: white;
+							margin-right: 12px;
+						}
+						&.tel {
+							font-weight: $font-weight-headline;
+						}
+						&.menu-item {
+							a {
+								text-transform: initial;
+							}
+							&:after {
+								content: "|";
+								color: white;
+								margin: 0px 8px;
+							}
+						}
+					}
+				}
+			}
+		}
+		.right {
+			text-align: right;
+			.social {
+				height: 100%;
+				display: flex;
+				align-items: flex-end;
+				justify-content: flex-end;
+				margin: 0;
+				li {
+					color: $link-color;
+					padding: 0px 12px;
+					i {
+						font-size: 40px;
+					}
+					.bee {
+						height: 32px;
+					}
+					#makespace-bee {
+						width: 3.25rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $design-width) {
+	footer {
+		.container {
+			.left {
+				nav {
+					ul {
+						li {
+							font-size: 16px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: $mobile-nav-breakpoint) {
+	.site-footer {
+		padding: 12px;
+		.container {
+			flex-direction: column;
+			.left {
+				.footer-inlinks {
+					ul {
+						flex-direction: column;
+						align-items: center;
+						justify-content: center;
+						li {
+							text-align: center;
+							margin: 12px;
+							&.logo {
+								padding: initial;
+							}
+						}
+					}
+				}
+			}
+			.right {
+				text-align: center;
+				.social {
+					margin: 12px;
+					justify-content: center;
+				}
+			}
+		}
+	}
+}
+#makespace-bee {
+	width: 2.5rem;
+}

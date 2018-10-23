@@ -1,0 +1,357 @@
+#ocn-overlay {
+	background: rgba(0,55,70,0.44);
+	bottom: 0;
+	display: block;
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	position: fixed;
+	visibility: hidden;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: -99997;
+	transition: opacity 400ms, visibility 0ms, z-index 0ms;
+	transition-delay: 0ms, 400ms, 400ms;
+
+	.nav-open & {
+		opacity: 1;
+		visibility: visible;
+		transition-delay: 0ms, 0ms, 0ms;
+		z-index: 99997;
+	}
+}
+#ocn {
+	z-index: 99998;
+}
+
+#ocn {
+	background: #F8F8F8;
+	bottom: 0;
+	position: fixed;
+	overflow-y: auto;
+	right: 0;
+	top: 0;
+	z-index: 99998;
+	transform: translateX(100%);
+	transition: transform 400ms;
+	transition-delay: 0ms;
+	max-width: 100vw;
+	.search-trigger {
+		display: none;
+	}
+	.quote-count {
+		&:after {
+			content: attr(data-qty);
+			background-color: $link-color;
+			color: white;
+			padding: 0px 6px 0px 7px;
+			border-radius: 2px;
+			margin-left: 4px;
+			font-size: 12px;
+			font-family: $font-family-headline;
+		}
+	}
+	.nav-open & {
+		transform: translateX(0);
+		transition-delay: 200ms;
+	}
+
+	.ocn-search {
+		label {
+			width: 100%;
+		}
+		form {
+			display: flex;
+			width: 100%;
+		}
+		.screen-reader-text {
+			display: none;
+		}
+		input {
+			padding: 18px;
+		}
+		.search-submit {
+			background-color: $link-color;
+			color: #FFF;
+	    border: 2px solid #23cafc;
+	    border-radius: 0px;
+	    padding: .25em 1em;
+	    letter-spacing: 2.6px;
+	    font-weight: 700;
+	    font-family: $font-family-headline;
+	    font-size: 18px;
+	    -webkit-transition: all 0.3s;
+	    transition: all 0.3s;
+	    cursor: pointer;
+	    line-height: 1.5;
+	    text-transform: uppercase;
+	    text-align: center;
+	    height: auto;
+	    position: relative;
+	    z-index: 2;
+		}
+	}
+
+	#ocn-inner {
+		@include clearfix;
+	}
+}
+
+#ocn-top {
+	padding: 24px;
+	height: 140px;
+	position: relative;
+	background-color: $link-color;
+	@include clearfix;
+}
+#ocn-brand {
+	float: left;
+	max-width: 180px;
+}
+#ocn-close {
+	background: transparent;
+	border: none;
+	display: block;
+	float: right;
+	height: 32px;
+	padding: 0;
+	position: relative;
+	width: 32px;
+	
+	span {
+		background: transparent;
+		display: block;
+		height: 4px;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 14px;
+
+		&:before,
+		&:after {
+			background: white;
+			content: '';
+			display: block;
+			height: 4px;
+			left: 0;
+			position: absolute;
+			width: 100%;
+		}
+		&:before {
+			top: 0;
+			transform: rotate(-45deg);
+		}
+		&:after {
+			bottom: 0;
+			transform: rotate(45deg);
+		}
+	}
+}
+
+#ocn-nav-primary {
+
+	.menu {
+		font-weight: $font-weight-headline;
+
+		.tel,
+		.quote {
+			background-color: white;
+			display: inline-flex;
+			justify-content: center;
+			width: 50%;
+			a, span {
+				color: $link-color;
+			}
+			span {
+				margin-left: 12px;
+			}
+			&:hover {
+				background-color: $link-color;
+				a, span {
+					color: white;
+				}
+			}
+		}
+
+		> li {
+			position: relative;
+			border-bottom: 1px solid rgba(95,92,90,0.15);
+			background-color: rgba(255, 255, 255, 0);
+			transition: all .3s linear;
+
+			.ocn-link-wrap{
+				display: block;
+				position: relative;
+			}
+
+			a {
+				align-items: center;
+				display: block;
+				padding: 20px;
+				position: relative;
+				color: $body-color;
+			}
+			.ocn-sub-menu-button{
+				display: none;
+			}
+
+			&:hover {
+				background-color: white;
+			}
+		}
+		
+		li{
+			&.menu-item-has-children {
+				
+				& > .ocn-link-wrap{
+					padding-right: 40px;
+					
+
+					& > .ocn-sub-menu-button {
+						display: none;
+						background: $link-color;
+						cursor: pointer;
+						position: absolute;
+						top: 0;
+						right: 0;
+						bottom: 0;
+						width: 40px;
+						z-index: 2;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+
+						&:after {
+							color: white;
+							content: '\f103';
+							font-family: "FontAwesome";
+							transform: rotate(-90deg);
+							transition: transform 300ms;
+						}
+					}
+				}
+			}
+
+			.sub-menu {
+				height: auto;
+				max-height: 0;
+				overflow: hidden;
+				transition: max-height 400ms;
+				background-color: white;
+				font-weight: $font-weight-base;
+				li {
+					a {
+						padding-left: 24px;
+						font-size: 16px;
+					}
+					.sub-menu {
+						padding: 0px 24px;
+						li {
+							padding: 12px 0px;
+							margin-left: 24px;
+							font-weight: $font-weight-base;
+							a {
+								padding: 0px 0px 0px 12px;
+								text-transform: initial;
+								font-size: 16px;
+								&:before {
+									content: "";
+									width: 32px;
+									height: 32px;
+									display: block;
+									background-image: url('orgo-orange.svg');
+									background-size: cover;
+									position: absolute;
+									left: -32px;
+									top: 50%;
+									transform: translateY(-50%) perspective(2000px);
+									opacity: .5;
+									transition: all .3s ease-in-out;
+								}
+							}
+							&:hover {
+								a {
+									&:before {
+										opacity: 1;
+										transform: translateY(-50%) rotate(25deg) scale(1.05);
+									}
+								}
+							}
+							&:first-of-type {
+								padding-top: 24px;
+							}
+							&:last-of-type {
+								padding-bottom: 24px;
+							}
+							&:nth-child(2n) {
+								a {
+									&:before {
+										background-image: url('orgo-green.svg');
+									}
+								}
+							}
+							&:nth-child(3n) {
+								a {
+									&:before {
+										background-image: url('orgo-red.svg');
+									}
+								}
+							}
+							&:nth-child(4n) {
+								a {
+									&:before {
+										background-image: url('orgo-purple.svg');
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			&.menu-item-open {
+				> .ocn-link-wrap > .ocn-sub-menu-button:after {
+					transform: rotate(0deg);
+				}
+				> .sub-menu {
+					max-height: 1000px;
+				}
+			}
+		}
+	}
+}
+
+
+#nav-toggle {
+	background: transparent;
+	border-top: 0.25rem solid #000;
+	border-right: 0;
+	border-bottom: 0.25rem solid #000;
+	border-left: 0;
+	height: 2.5rem;
+	line-height: 1;
+	padding: 0;
+	transition: transform 300ms;
+	transition-delay: 0ms;
+	width: auto;
+}
+.nav-open {
+	#nav-toggle {
+		transition-delay: 0ms;
+	}
+}
+
+@media (max-width: $phablet) {
+	#ocn-nav-primary {
+		.menu {
+			font-weight: $font-weight-headline;
+			.tel,
+			.quote {
+				text-align: right;
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+}

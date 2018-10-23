@@ -1,0 +1,115 @@
+
+.filter-container{
+	display: flex;
+	align-items: center;
+	margin-left: auto; 
+	font-family: $font-family-base;
+	font-weight: 700;
+	margin: 24px 0;
+	.filter-label{
+		color: #FFF;
+		margin-right: 1rem;
+		margin-left: auto;
+		display: none;
+	}
+
+	.filter-dropdown{
+		position:relative;
+    background-color: white;
+    z-index: 100;
+    border: solid 1px rgba(95,92,90,0.32);
+    border-radius: 8px;
+    transition: all 0s linear;
+    text-transform: uppercase;
+    width: 300px;
+    margin-left: auto;
+		&:hover {
+			.filter-display {
+				color: $link-color;
+			}
+		}
+		.filter-display{
+			border:0 none;
+			cursor:pointer;
+			height: 100%;
+			padding: 0 3rem 0 1rem;
+			position:relative;
+			white-space: nowrap;
+			width:100%;
+			color: $body-color;
+			padding: 1rem;
+			min-width: 200px;
+
+
+			&::before{
+				content:"\f107";
+				display:block;
+				font-family: 'FontAwesome';
+				font-size:1rem;
+				height: 1rem;
+				margin:auto;
+				position: absolute;
+				top: 0;
+				right: 1rem;
+				bottom: 0;
+				text-align: left;
+				transition: all .25s linear;
+				transform:rotate(0deg);
+			}
+		}
+
+		ul{
+			background: #fff;
+			opacity: 0;
+			visility: hidden;
+			transform-origin: top center;
+			list-style:none;
+			margin:0;
+			min-width:100%;
+			padding:0;
+			position:absolute;
+			top:100%;
+			right:0;
+			text-align: left;
+			width: 100%;
+			transition: all .15s linear;
+			border: solid 1px rgba(95,92,90,0.32);
+			border-top: 0px;
+			width: calc(100% + 2px);
+			transform: translateX(1px) scaleY(0);
+			border-radius: 0px 0px 8px 8px;
+			max-height: 300px;
+    	overflow: auto;
+			li{
+				margin:0;
+				padding:0;
+			}
+
+			a{
+				display:block;
+				padding:0.5rem 1rem;
+				text-decoration: none;
+				transition:all 0.3s;
+				color: $link-color;
+
+				&:hover{
+					background: rgba(0,0,0,0.1);
+				}
+			}
+		}
+
+		&.active{
+			z-index:100;
+			border-radius: 8px 8px 0px 0px;
+			.filter-display:before{
+				transform:rotate(180deg);
+			}
+			ul{
+				box-shadow:0 3px 3px rgba(0,0,0,0.1);
+				opacity: 1;
+				visility: visible;
+				transform: translateX(1px) scaleY(1);
+			}
+		}
+	}
+}

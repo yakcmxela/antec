@@ -1,0 +1,82 @@
+html {
+	box-sizing: border-box;
+	font-size: $font-size-base;
+
+	&.js {
+		@media(min-width: $fullsize){
+			font-size: #{100*$font-size-base/$design-width}vw;
+		}
+	}
+}
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+* {
+	outline: none;
+}
+body {
+	font-family: $font-family-base;
+	font-weight: $font-weight-base;
+	font-size: 1rem;
+	line-height: $line-height-base;
+	overflow-x: hidden;
+	padding-top: 70px;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	&.home {
+		padding-top: 0px;
+	}
+
+	&.nav-ocn.nav-open {
+		overflow: hidden;
+	}
+
+	&.scrolled {
+		.site-header {
+			&.quote {
+				&.home {
+					.right {
+						nav {
+							.menu {
+								transform: translateX(0px);
+							}
+						}
+					}
+				}					
+			}
+			&.home {
+				transform: translateY(-70px);
+				background-color: rgba(0, 55, 70, 0.44);
+				.left {
+					.brand {
+						&.top {
+							transform: translate(0%, 100%);
+							opacity: 0;
+						}
+						&.scrolled {
+							transform: translate(0%, 0%);;
+							opacity: 1;
+						}
+					}
+				}
+				.right {
+					.tel, .quote {
+						opacity: 0;
+					}
+					nav {
+						.menu {
+							transform: translateX(3.5em);
+						}
+						.tel {
+							opacity: 1;
+						}
+					}
+
+				}
+			}
+		}
+	}
+}

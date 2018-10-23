@@ -1,0 +1,90 @@
+body{
+	color: $body-color;
+	font-size: 1.6rem;
+}
+
+/* Type */
+
+h1,h2,h3,h4,h5,h6{
+	color: $headline-color;
+	line-height: 1;
+	margin: 0em 0 0.5em 0;
+}
+
+h1{
+	margin: 0 0 .5em 0;
+}
+
+h2{
+}
+
+h3{
+}
+
+p{
+	margin: 1em 0;
+}
+
+a{
+	color: $link-color;
+}
+
+blockquote{
+	
+}
+
+section {
+	background-size: cover;
+}
+
+.container{
+	margin: 0 auto;
+	max-width: $container-max-width;
+	width: $container-width;
+}
+
+
+/* Button styles */
+
+.button,
+.button-ghost {
+	background: $link-color;
+	color: #fff;
+	border: 2px solid $link-color;
+	border-radius: 8px;
+	padding: .25em 1em;
+	letter-spacing: 2.6px;
+	font-weight: $font-weight-headline;
+	font-family: $font-family-headline;
+	font-size: 18px;
+	transition: all 0.3s;
+	cursor: pointer;
+	line-height: 1.5;
+	text-transform: uppercase;
+	text-align: center;
+	height: auto;
+	&:hover{
+		background-color: white;;
+		color: $link-color;
+	}
+}
+
+.button-ghost{
+	background: none;
+	border: 2px solid $link-color;
+	font-weight: $font-weight-headline;
+	font-family: $font-family-headline;
+	color: $link-color;
+	min-width: initial;
+	height: auto;
+	&:hover{
+		background-color: $link-color;
+		color: white;
+	}
+}
+
+@media (min-width: 1800px) {
+	body {
+		font-size: 1.3rem;
+	}
+}
