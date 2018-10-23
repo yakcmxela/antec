@@ -9,7 +9,7 @@ class MakespaceChild {
 		$this->antec_filter_products();
 		$this->antec_add_to_quote();
 		$this->antec_update_quote();
-		$this->antec_request_quote();
+		$this->antec_request_quote(); 
 	}
 
 	function wp_enqueue_scripts(){
